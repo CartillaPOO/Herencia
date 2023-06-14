@@ -72,10 +72,12 @@ public class Controlador implements ActionListener
             if(nombreColeccion.equals("") || numeroColeccion == 0)
             {
                 venPrin.miPanelResultados.mostrarResultado("Por favor, llene todos los campos");
+                venPrin.miDialogoRegistrarLibro.cerrarDialogoRegistrar();
             }
             else
             {
                 biblioteca.registrarLibroColeccion(new LibroColeccion(titulo, autor, edicion, lujo, nombreColeccion, numeroColeccion));
+                LibroColeccion libroColeccion = biblioteca.getLibroColeccion(0);
             }
         }
 
